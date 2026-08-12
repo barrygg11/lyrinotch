@@ -1,0 +1,2 @@
+"NSAppleEventsUsageDescription" = "Lyrinotch uses Automation to read and control Spotify or Apple Music playback and show synchronized lyrics.";
+"NSMicrophoneUsageDescription" = "Lyrinotch uses the microphone only when you enable or manually run lyric timing calibration. Audio is analyzed on this Mac and is not uploaded.";

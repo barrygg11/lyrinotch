@@ -1,0 +1,2 @@
+"NSAppleEventsUsageDescription" = "Lyrinotch 需要「自動化」權限，以讀取及控制 Spotify 或 Apple Music 的播放狀態，並顯示同步歌詞。";
+"NSMicrophoneUsageDescription" = "Lyrinotch 只會在你啟用或手動執行歌詞時間校正時使用麥克風；音訊僅在這台 Mac 上分析，不會上傳。";

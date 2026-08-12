@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    name: Build & test
+    runs-on: macos-14
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+      - name: Swift version
+        run: swift --version
+
+      - name: Check multilingual README parity
+        run: bash scripts/check-readme-sync.sh
+
+      - name: Check release notes
+        run: |
+          bash scripts/test-release-notes-checker.sh
+          bash scripts/check-release-notes.sh
+
+      - name: Strict concurrency build
+        run: >-
+          swift build
+          -Xswiftc -strict-concurrency=complete
+          -Xswiftc -warn-concurrency
+          -Xswiftc -warnings-as-errors
+
+      - name: Release build
+        run: swift build -c release
+
+      - name: Test with coverage
+        run: >-
+          swift test --enable-code-coverage
+          -Xswiftc -strict-concurrency=complete
+          -Xswiftc -warn-concurrency
+          -Xswiftc -warnings-as-errors
+
+      - name: Enforce production coverage floor
+        run: bash scripts/check-coverage.sh 25

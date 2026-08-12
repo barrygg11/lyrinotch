@@ -1,0 +1,64 @@
+# Swift / Xcode
+.build/
+.swiftpm/
+DerivedData/
+dist/
+*.dmg
+*.pkg
+*.xcarchive/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcuserstate
+xcuserdata/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.app
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Secrets / local config
+.env
+.env.*
+!.env.example
+.envrc
+.direnv/
+Secrets.plist
+**/GoogleService-Info.plist
+**/spotify-credentials.json
+AuthKey_*.p8
+*.p12
+*.pfx
+*.pem
+*.key
+*.mobileprovision
+*.provisionprofile
+*.keychain*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*~
+
+# Logs / local scratch
+*.log
+/tmp/
+.superpowers/
+docs/superpowers/
+
+# Coverage
+*.profraw
+*.profdata
+coverage/
+
+# Python
+__pycache__/
+*.pyc
+.venv/

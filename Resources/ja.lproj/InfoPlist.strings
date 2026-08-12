@@ -1,0 +1,2 @@
+"NSAppleEventsUsageDescription" = "Lyrinotch は Spotify または Apple Music の再生状態の取得・操作と同期歌詞の表示にオートメーション権限を使用します。";
+"NSMicrophoneUsageDescription" = "Lyrinotch は歌詞タイミング調整を有効にするか手動実行した場合のみマイクを使用します。音声はこの Mac 内で解析され、アップロードされません。";
